@@ -1,6 +1,8 @@
-<img width="390" height="647" alt="image" src="https://github.com/user-attachments/assets/07a4857e-6f7f-4bb5-bf48-599e8e14eea7" /># 清流 · B站 AI 内容过滤
+清流 · B站 AI 内容过滤
 
 Chrome 扩展，支持 B 站 AI 声明过滤、疑似视频补充屏蔽和自定义关键词。**当前版本：1.3.1**。
+
+<img width="390" height="647" alt="image" src="https://github.com/user-attachments/assets/07a4857e-6f7f-4bb5-bf48-599e8e14eea7" /># 
 
 ## 功能
 
