@@ -1,0 +1,1 @@
+importScripts("metadata-worker.js");

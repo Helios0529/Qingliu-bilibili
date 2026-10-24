@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>清流 · B站 AI 内容过滤</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header><img src="icons/48.png" width="40" height="40" alt=""><div><h1>清流 <span>BILIBILI</span></h1><p>少一点合成，多一点真实。</p></div><span class="version">1.3.1</span></header>
+  <main>
+    <section class="master"><div><h2>AI 内容过滤</h2><p id="state">正在读取设置…</p></div><label class="switch"><input id="enabled" type="checkbox" aria-label="启用 AI 内容过滤"><span></span></label></section>
+    <fieldset id="controls" disabled>
+      <legend>遇到 AI 创作视频时</legend>
+      <div class="modes"><label><input type="radio" name="mode" value="hide"><strong>直接屏蔽</strong><small>从视频列表中隐藏</small></label><label><input type="radio" name="mode" value="mark"><strong>仅作标注</strong><small>保留卡片，提示 AI 制作</small></label></div>
+      <section class="toggles">
+        <label><div><strong>补充疑似AI视频</strong><small>勾选后，B 站提示“疑似 AI”的视频也按当前模式处理</small></div><input id="includeSuspected" type="checkbox"></label>
+      </section>
+      <p class="note">未勾选补充时，疑似内容仅提示。自定义词命中会显示“关键词屏蔽”。</p>
+      <details id="keywordDetails"><summary>自定义屏蔽词</summary>
+        <label class="field">自定义屏蔽词 <small>默认留空；每行一个，按标题匹配，最多 200 条</small><textarea id="blockWords" rows="3" maxlength="20000" placeholder="仅你填写的词生效，例如：不想看的系列名"></textarea></label>
+        <button id="saveRules" type="button" class="primary">保存屏蔽词</button>
+      </details>
+      <section class="allow-section">
+        <label for="allowInput" class="allow-heading">添加放行视频</label>
+        <form id="allowForm" class="allow-form">
+          <input id="allowInput" type="text" maxlength="2048" placeholder="输入 BV 号或视频链接" aria-label="放行视频 BV 号或链接" autocomplete="off" spellcheck="false">
+          <button id="addAllow" type="submit" class="primary">添加</button>
+        </form>
+        <details id="allowDetails"><summary id="allowSummary">已放行视频（0 / 500）</summary><ul id="allowList" class="allow-list" aria-label="已放行视频"></ul></details>
+      </section>
+    </fieldset>
+    <footer><span id="status" role="status" aria-live="polite">设置仅保存在本机</span><button id="clearCache" type="button">清理识别缓存</button></footer>
+  </main>
+  <script src="shared.js"></script><script src="popup.js"></script>
+</body></html>

@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "清流 · B站 AI 内容过滤",
+  "version": "1.3.1",
+  "description": "支持哔哩哔哩 AI 声明过滤、疑似视频补充屏蔽、自定义屏蔽词、单条放行、列表补位与仅标注模式。",
+  "minimum_chrome_version": "111",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.bilibili.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "清流 · B站 AI 内容过滤",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.bilibili.com/*",
+        "https://search.bilibili.com/*",
+        "https://space.bilibili.com/*",
+        "https://t.bilibili.com/*"
+      ],
+      "js": [
+        "shared.js",
+        "classifier.js",
+        "page-data.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
