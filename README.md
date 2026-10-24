@@ -15,12 +15,12 @@ Chrome 扩展，支持 B 站 AI 声明过滤、疑似视频补充屏蔽和自定
 
 ## 安装
 
-1. 从 Releases 下载 `BiliAI-Filter-1.3.1.zip` 并解压。
+1. 从 Releases 下载 `清流 1.3.1.zip` 并解压。
 2. 打开 Chrome 的 `chrome://extensions`，开启“开发者模式”。
 3. 点击“加载已解压的扩展程序”，选择 **`extension` 文件夹**。
 4. 刷新 B 站页面。更新时替换原目录的文件，再点击“重新加载”。
 
-Chrome Web Store正在审核中。
+Chrome Web Store正在审核中~~~
 
 ## 使用
 
